@@ -1,0 +1,65 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html manifest="comicgen.appcache">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<link href="estilo.css" type="text/css" rel="stylesheet"/>
+<title>Geektionnerd creator</title>
+
+<style type="text/css">
+	@font-face {
+	   font-family:  'Domestic_Manners';
+       src:  url('./font/Domestic_Manners.ttf');
+    }
+</style>
+</head>
+<body>
+
+<center>
+<div id="toolbar" class="rcBottom">
+	<div>BARRE D'OUTILS</div>
+	<a href="javascript:cg.saveImage();">Enregistrer l'image</a> |
+	<a href="javascript:cg.setScreen(800, 600)">800x600</a> | 
+	<a href="javascript:cg.setScreen(640, 480)">640x480</a> | 
+	<a href="javascript:cg.setScreen(320, 240)">320x240</a>
+</div>
+</center>
+
+<div id="container">
+	<div id="menuContainer">
+		<div id="logo">Geektionnerd creator</div>
+		<div id="lib" class="rc">
+			<div><input type="text" id="newText" onkeypress="cg.createTextFromInput(event)"/></div>
+		</div>
+	</div>
+	
+	<div id="cscreen">
+		<canvas class="rc" id="c" width="800" height="600">
+			Votre navigateur ne supporte pas HTML5. Utiliez un navigateur plus récent SVP.
+		</canvas>
+	</div>
+</div>
+
+<div id="hiddenObjs">
+	<div id="textTool" class="rc mini textTool" title="Adicionar texto" onclick="cg.createText();">T</div>
+	
+	<div id="instructs" class="rc instructions">
+		<b>Instructions</b>
+		<ul>
+			<li><b>Flêche bas:</b> rétrécir</li>
+			<li><b>Flêche haut:</b> agrandir </li>
+			<li><b>Gauche/droite:</b> retournement horizontal</li>
+			<li><b>Del:</b> effacer l'objet</li>
+		</ul>
+
+	</div>
+</div>
+
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="ragaboom.min.js"></script>
+<script type="text/javascript" src="comicgen.js"></script>
+<script type="text/javascript">
+
+</script>
+
+</body>
+</html>

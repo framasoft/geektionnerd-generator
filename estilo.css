@@ -1,0 +1,110 @@
+
+body {
+    background: url("images/bg.png") repeat fixed 0 0 #D5B578;
+    color: #D5B578;
+    font-family: arial,helvetica;
+    font-size: 12px;
+    margin: 0;
+    text-shadow: 1px 1px 0 #222222;
+}
+a {
+    color: #222222;
+    font-weight: bold;
+    text-decoration: none;
+}
+#container {
+    height: 650px;
+    margin-left: 100px;
+    overflow: hidden;
+    text-align: center;
+    width: 1050px;
+}
+#menuContainer {
+    float: left;
+    height: 520px;
+    width: 220px;
+}
+#lib {
+    background-color: #D5B578;
+    height: 380px;
+    overflow: auto;
+    padding-left: 5px;
+    padding-top: 5px;
+    width: 210px;
+}
+#cscreen {
+    float: left;
+    height: 490px;
+    text-align: center;
+    width: 590px;
+}
+#cscreen canvas {
+    border: 7px solid #D5B578;
+    box-shadow: 3px 3px 10px #222222;
+    margin-left: 2px;
+}
+.mini {
+    background-color: white;
+    border: 2px solid #D5B578;
+    float: left;
+    height: 50px;
+    margin: 2px;
+    overflow: hidden;
+    padding: 2px;
+    width: 50px;
+}
+.mini:hover {
+    background-color: orange;
+    cursor: pointer;
+}
+.rc {
+    border-radius: 4px 4px 4px 4px;
+}
+.rcBottom {
+    border-radius: 0 0 4px 4px;
+}
+#hiddenObjs {
+    display: none;
+}
+.textTool {
+    color: #222222;
+    font-family: 'times new roman',times;
+    font-size: 40px;
+    text-align: center;
+}
+.instructions {
+    background-color: #D5B578;
+    color: #222222;
+    height: 100px;
+    margin: 6px 2px 2px;
+    padding: 6px;
+    text-align: left;
+    text-shadow: 1px 1px 0 silver;
+    width: 202px;
+}
+.instructions ul {
+    list-style: none outside none;
+    padding-left: 5px;
+}
+#logo {
+    color: #222222;
+    font-size: 29px;
+    font-weight: bold;
+    padding: 4px;
+    text-align: left;
+    text-shadow: 0 0 8px #D5B578;
+}
+
+
+#newText {
+    width: 180px;
+}
+
+#toolbar {
+    background-color: #D5B578;
+    height: 50px;
+    margin-bottom: 10px;
+    padding: 3px;
+    text-align: left;
+    width: 950px;
+}
