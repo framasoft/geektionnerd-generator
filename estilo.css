@@ -30,7 +30,7 @@ a {
     overflow: auto;
     padding-left: 5px;
     padding-top: 5px;
-    width: 210px;
+    width: 215px;
 }
 #cscreen {
     float: left;
@@ -80,7 +80,7 @@ a {
     padding: 6px;
     text-align: left;
     text-shadow: 1px 1px 0 silver;
-    width: 202px;
+    width: 209px;
 }
 .instructions ul {
     list-style: none outside none;
@@ -107,4 +107,31 @@ a {
     padding: 3px;
     text-align: left;
     width: 950px;
+}
+
+.deroulef{
+	height: 30px;
+    background:url(images/cachef.png) no-repeat right;
+}
+
+.enroulef {
+    background:url(images/affichef.png) no-repeat right;
+}
+
+.derouleb{
+	height: 30px;
+    background:url(images/cacheb.png) no-repeat right;
+}
+
+.enrouleb {
+    background:url(images/afficheb.png) no-repeat right;
+}
+
+.deroulep{
+	height: 30px;
+    background:url(images/cachep.png) no-repeat right;
+}
+
+.enroulep {
+    background:url(images/affichep.png) no-repeat right;
 }

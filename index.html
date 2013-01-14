@@ -27,9 +27,11 @@
 <div id="container">
 	<div id="menuContainer">
 		<div id="logo">Geektionnerd creator</div>
-		<div id="lib" class="rc">
-			<div><input type="text" id="newText" onkeypress="cg.createTextFromInput(event)"/></div>
-		</div>
+		
+			<div id="lib" class="rc">
+				<div><input type="text" id="newText" onkeypress="cg.createTextFromInput(event)"/></div>
+			</div>
+			
 	</div>
 	
 	<div id="cscreen">
@@ -57,7 +59,25 @@
 <script type="text/javascript" src="jquery-1.5.2.min.js"></script>
 <script type="text/javascript" src="ragaboom.min.js"></script>
 <script type="text/javascript" src="comicgen.js"></script>
-<script type="text/javascript">
+<script type="text/javascript"> 
+$(document).ready(function(){
+  $("#menufond").click(function(){
+    $("#fond").slideToggle("slow");
+	 $(this).toggleClass("enroulef"); return false;
+ });
+});
+$(document).ready(function(){
+  $("#menutoon").click(function(){
+    $("#toon").slideToggle("slow");
+	 $(this).toggleClass("enroulep"); return false;
+ });
+});
+$(document).ready(function(){
+  $("#menubulle").click(function(){ 
+    $("#bulle").slideToggle("slow");
+	 $(this).toggleClass("enrouleb"); return false;
+	 });
+});
 
 </script>
 

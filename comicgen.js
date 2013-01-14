@@ -14,8 +14,12 @@ scene.update();
 
 var lib = $('#lib');
 
-var miniUrls = ["fond1.png", "fond2.png", "fond3.png", "fond4.png", "toon01_mini.png", "toon02_mini.png", "toon03_mini.png", "toon04_mini.png", "toon05_mini.png", "toon06_mini.png", "toon07_mini.png", "toon08_mini.png", "toon09_mini.png", "toon10_mini.png", "toon11_mini.png", "ballon1_mini.png", "ballon2_mini.png", "ballon3_mini.png", "ballon4_mini.png", "ballon5_mini.png",];
-var toonUrls = ["fond1.png", "fond2.png", "fond3.png", "fond4.png", "toon01.png", "toon02.png", "toon03.png", "toon04.png", "toon05.png", "toon06.png", "toon07.png", "toon08.png", "toon09.png", "toon10.png", "toon11.png", "ballon1.png", "ballon2.png", "ballon3.png", "ballon4.png", "ballon5.png",];
+var miniUrlsfond = ["fond1.png", "fond2.png", "fond3.png", "fond4.png",];
+var Urlsfond = ["fond1.png", "fond2.png", "fond3.png", "fond4.png",];
+var miniUrlstoon = ["toon01_mini.png", "toon02_mini.png", "toon03_mini.png", "toon04_mini.png", "toon05_mini.png", "toon06_mini.png", "toon07_mini.png", "toon08_mini.png", "toon09_mini.png", "toon10_mini.png", "toon11_mini.png",];
+var Urlstoon = ["toon01.png", "toon02.png", "toon03.png", "toon04.png", "toon05.png", "toon06.png", "toon07.png", "toon08.png", "toon09.png", "toon10.png", "toon11.png",];
+var miniUrlsbulle = ["ballon1_mini.png", "ballon2_mini.png", "ballon3_mini.png", "ballon4_mini.png", "ballon5_mini.png","ballon6_mini.png",];
+var Urlsbulle = ["ballon1.png", "ballon2.png", "ballon3.png", "ballon4.png", "ballon5.png","ballon6.png",];
 
 cg.clearScreen = function(){
 	ctx = c.getContext('2d');
@@ -68,16 +72,54 @@ d.onmousewheel = function(mw){
 };
 
 cg.buildMinis = function(){
+	var bufferd = '<div id="menutoon" class="deroulep"></div><div id="toon">';
+	var bufferf ='</div>*******************************';
 	var buffer = '';
+	
+
+	
 	var imgString = "<img src='toons/IMG_URL' class='rc mini'></img>";
 	var link = "<a href=\"javascript:cg.createImage('toons/IMG_URL')\">";
 	
-	for(var i=0; i < miniUrls.length; i++){
-		buffer += link.replace(/IMG_URL/, toonUrls[i]);
-		buffer += imgString.replace(/IMG_URL/, miniUrls[i]) + '</a>';
+	for(var i=0; i < miniUrlstoon.length; i++){
+		buffer += link.replace(/IMG_URL/, Urlstoon[i]);
+		buffer += imgString.replace(/IMG_URL/, miniUrlstoon[i]) + '</a>';
 	}
 	
-	lib.append(buffer);
+	lib.append(bufferd+buffer+bufferf);
+	
+	var fondbufferd = '<div id="menufond" class="deroulef"></div><div id="fond">';
+	var fondbufferf = '</div>*******************************';
+	var fondbuffer = '';
+	
+
+	
+	var imgString = "<img src='toons/IMG_URL' class='rc mini'></img>";
+	var link = "<a href=\"javascript:cg.createImage('toons/IMG_URL')\">";
+	
+	for(var i=0; i < miniUrlsfond.length; i++){
+		fondbuffer += link.replace(/IMG_URL/, Urlsfond[i]);
+		fondbuffer += imgString.replace(/IMG_URL/, miniUrlsfond[i]) + '</a>';
+	}
+	
+	lib.append(fondbufferd+fondbuffer+fondbufferf);
+	
+	var bullebufferd = '<div id="menubulle" class="derouleb"></div><div id="bulle">';
+	var bullebufferf ='</div>*******************************';
+	var bullebuffer = '';
+	
+
+	
+	var imgString = "<img src='toons/IMG_URL' class='rc mini'></img>";
+	var link = "<a href=\"javascript:cg.createImage('toons/IMG_URL')\">";
+	
+	for(var i=0; i < miniUrlsbulle.length; i++){
+		bullebuffer += link.replace(/IMG_URL/, Urlsbulle[i]);
+		bullebuffer += imgString.replace(/IMG_URL/, miniUrlsbulle[i]) + '</a>';
+	}
+	
+	lib.append(bullebufferd+bullebuffer+bullebufferf);
+	
 	
 	//lib.append( $('#textTool').clone() );
 	$('#menuContainer').append( $('#instructs').clone() );
