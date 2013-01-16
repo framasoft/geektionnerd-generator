@@ -58,7 +58,24 @@
 <script type="text/javascript" src="ragaboom.min.js"></script>
 <script type="text/javascript" src="comicgen.js"></script>
 <script type="text/javascript">
-
+$(document).ready(function(){
+  $("#menufond").click(function(){
+    $("#fond").slideToggle("slow");
+	 $(this).toggleClass("enroulef"); return false;
+ });
+});
+$(document).ready(function(){
+  $("#menutoon").click(function(){
+    $("#toon").slideToggle("slow");
+	 $(this).toggleClass("enroulep"); return false;
+ });
+});
+$(document).ready(function(){
+  $("#menubulle").click(function(){ 
+    $("#bulle").slideToggle("slow");
+	 $(this).toggleClass("enrouleb"); return false;
+	 });
+});7
 </script>
 
 </body>
