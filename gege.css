@@ -1,0 +1,238 @@
+body{
+font-family: "Domestic Manners", serif;
+background-color: rgb(65, 60, 60);
+color: #000;
+background-image: url(images/bg.png);
+font-size:12px;
+margin:0px;
+}
+
+@font-face {
+    font-family: 'Domestic Manners';
+    src: url('font/domestic_manners-webfont.eot');
+    src: url('font/domestic_manners-webfont.eot?#iefix') format('embedded-opentype'),
+         url('font/domestic_manners-webfont.woff') format('woff'),
+         url('font/domestic_manners-webfont.ttf') format('truetype'),
+         url('font/domestic_manners-webfont.svg#domestic_mannersregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+#wrapper, #footer
+{
+font-family: arial, helvetica, sans-serif;
+}
+
+html, body
+{
+height: 100%;
+width: 100%;
+margin: 0;
+padding: 0;
+}
+
+a:link
+{
+text-decoration: none;
+color: #000;
+background-color: inherit;
+}
+
+
+.hidden
+{
+position: absolute !important;
+top: -9999px !important;
+left: -9999px !important;
+}
+
+h1, h2, p.subtitle, .instructions, .instructions ul, #toolbar, p
+{
+margin: 0;
+padding: 0;
+}
+
+h1, h2
+{
+text-transform: uppercase;
+background-color: transparent;
+color: #000;
+text-shadow: 0 1px 1px rgb(239,223,191);
+font-size: .95em;
+}
+
+em
+{
+font-weight: bold;
+font-style: normal;
+}
+
+ .save a{
+background-color: #000;
+color: #fff;
+padding:7px;
+text-decoration:none;
+font-weight:bold;
+text-shadow: none;
+
+}
+
+.save a:hover
+{
+background-color:#BF6B04;
+color:#000;	
+}
+
+
+#wrapper
+{
+width: 1052px;
+margin:0 auto;
+margin-top: 60px;
+height: 602px;
+background-color: #d5b578;
+border:7px solid rgb(213, 181, 120);
+box-shadow:0 3px 10px black;
+background-image: url(images/bg-tab.png);		
+}
+
+#tableauDeBord
+{
+width: 244px;
+float: left;
+height: 100%;
+background-color: #d5b578;
+background-image: url(images/bg-tab.png);
+
+}
+ input, .mini, #wrapper, #toolbar a
+ {
+-moz-border-radius: 3px;
+-webkit-border-radius: 3px;
+-khtml-border-radius: 3px;
+border-radius: 3px;
+  }
+input
+{
+
+display:block;
+width:176px;
+background: #ffffff;
+border: none;
+font-weight: bold;
+font-style: italic;
+outline: none;
+padding: 5px;
+margin-bottom: 5px;
+
+}
+
+#cscreen
+{
+margin-left:244px;
+width: 590px;
+height: 100%;
+   font-weight: normal;
+   font-style: normal;
+}
+
+#lib, .instructions, #toolbar
+{
+padding-left: 14px;
+width: 220px;
+}
+
+
+#lib
+{
+height: 340px;
+overflow:auto;
+overflow-x: hidden;
+-ms-overflow-x: hidden; /*IE 8*/
+margin-top: 14px;
+}
+
+
+#cscreen canvas
+{	
+margin-left: 4px;
+border: 1px solid #836f47;
+margin-bottom:2px;
+
+}
+
+.mini{
+	
+background-color:white;
+width:50px;
+height:50px;
+padding:3px;
+margin:3px;
+overflow:hidden;
+float:left;
+}
+
+.mini:hover{
+background-color:#BF6B04;
+cursor: hand;
+cursor: pointer;
+}
+
+#hiddenObjs{
+display:none;
+}
+
+.textTool{
+text-align:center;
+font-family:'times new roman', times, serif;
+font-size:40px;
+color:black;
+}
+
+
+.instructions, #toolbar, h2.last
+{
+margin-top: 18px;
+}
+h2.last
+{padding-bottom: 0;
+}
+
+.instructions ul{
+list-style:none;
+padding-top:7px;
+text-align: left;
+}
+
+#toolbar p
+{
+padding: 0;
+}
+
+footer
+{
+margin-top: 50px;
+width: 100%;
+text-align: center;
+color: #273740;
+
+}
+
+footer p
+{
+display: inline;
+background-color:#ebebeb;
+}
+
+footer a
+{
+color: #273740;
+font-weight: bold;
+text-decoration: none;
+}
+
+footer a:hover
+{
+text-decoration: underline;
+}
