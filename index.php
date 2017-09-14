@@ -9,7 +9,7 @@
 
 <!-- ajout conteneur global -->
 <div id="wrapper">
-
+  <div id="focusImg" style="display:none;"><img id="bigImg"/></div>
 <!-- tableau de bord -->
 
 	<div id="tableauDeBord">

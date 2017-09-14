@@ -67,20 +67,44 @@ d.onmousewheel = function(mw){
 	}
 };
 
+cg.hoverdiv = function(e,divid){
+
+    var left  = e.clientX  + "px";
+    var top  = e.clientY  + "px";
+
+    
+    var div = document.getElementById(divid);
+    div.style.left = left;
+    div.style.top = top;
+
+    $("#"+divid).toggle();
+    return false;
+}
+cg.sourceSwap = function (e) {
+    var img_mini = $(this);
+    var img_id = parseInt(img_mini.data('src-id'));
+    var img_url = toonUrls[img_id];
+    console.log(img_url)
+    $("#bigImg").attr('src','toons/' + img_url);
+    cg.hoverdiv(e,"focusImg")
+}
 cg.buildMinis = function(){
 	var buffer = '';
-	var imgString = "<img src='toons/IMG_URL' class='rc mini' alt='toons'></img>";
+	var imgString = "<img src='toons/IMG_URL' data-src-id='IMG_ID' class='rc mini' alt='toons'></img>";
 	var link = "<a href=\"javascript:cg.createImage('toons/IMG_URL')\">";
 
 	for(var i=0; i < miniUrls.length; i++){
 		buffer += link.replace(/IMG_URL/, toonUrls[i]);
-		buffer += imgString.replace(/IMG_URL/, miniUrls[i]) + '</a>';
+		buffer += imgString.replace(/IMG_URL/, miniUrls[i]).replace(/IMG_ID/, i) + '</a>';
 	}
 
 	lib.append(buffer);
 
 	//lib.append( $('#textTool').clone() );
 	$('#menuContainer').append( $('#instructs').clone() );
+        $(function () {
+          $('img.rc').hover(cg.sourceSwap, cg.sourceSwap);
+        });
 }
 
 cg.buildMinis();
