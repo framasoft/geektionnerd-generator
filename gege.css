@@ -236,3 +236,10 @@ footer a:hover
 {
 text-decoration: underline;
 }
+
+#focusImg
+{
+  background-color:white;
+  position: fixed;
+
+}
