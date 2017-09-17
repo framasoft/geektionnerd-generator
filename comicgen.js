@@ -1,8 +1,7 @@
 var d = document;
 var cg = {};
-var w = window.innerWidth * 0.8;
-var h = window.innerHeight * 0.8;;
-console.log('size : ' + w + ' x ' + h);
+var w = parseInt(window.innerWidth * 0.8);
+var h = parseInt(window.innerHeight * 0.8);
 var canvas = $('#c');
 canvas.attr('width',w).attr('height',h);
 var c = canvas[0];
@@ -11,6 +10,8 @@ var scene = new RB.Scene(c);
 var fontFamily = "Domestic Manners, Arial, helvetica, sans serif";
 var pop = new Audio('pop.ogg');
 var currentObj = null;
+$('#newWidth').val(w);
+$('#newHeight').val(h);
 
 scene.add( scene.rect(w, h, 'white') );
 scene.update();
@@ -177,7 +178,17 @@ cg.createTextFromInput = function(e){
 		pop.play();
 	}
 }
+cg.createImageFromInput= function(e){
 
+   var key = e.keyCode || e.which;
+   var imgUrl = $('#newImgUrl').val();
+
+   if(key == 13){
+   
+     cg.createImage(imgUrl);
+     $('#newImgUrl').val('');
+   }
+}
 cg.saveImage = function(){
 	var data = c.toDataURL('png');
        // $.ajax({

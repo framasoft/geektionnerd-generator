@@ -53,7 +53,7 @@ margin: 0;
 padding: 0;
 }
 
-h1, h2
+h1, h2, h3
 {
 text-transform: uppercase;
 background-color: transparent;
@@ -242,4 +242,9 @@ text-decoration: underline;
   background-color:white;
   position: fixed;
 
+}
+#newWidth, #newHeight{
+
+ width: 70px ;
+display : inline;
 }
