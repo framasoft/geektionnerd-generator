@@ -87,10 +87,10 @@ color:#000;
 
 #wrapper
 {
-width: 1052px;
-margin:0 auto;
-margin-top: 60px;
-height: 602px;
+width: auto;
+margin:0;
+margin-top: 30px;
+height: auto;
 background-color: #d5b578;
 border:7px solid rgb(213, 181, 120);
 box-shadow:0 3px 10px black;
@@ -212,7 +212,7 @@ padding: 0;
 
 footer
 {
-margin-top: 50px;
+margin-top: 10px;
 width: 100%;
 text-align: center;
 color: #273740;

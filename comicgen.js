@@ -1,10 +1,13 @@
 var d = document;
 var cg = {};
-var c = $('#c')[0];
+var w = window.innerWidth * 0.8;
+var h = window.innerHeight * 0.8;;
+console.log('size : ' + w + ' x ' + h);
+var canvas = $('#c');
+canvas.attr('width',w).attr('height',h);
+var c = canvas[0];
 var ctx = c.getContext('2d');
 var scene = new RB.Scene(c);
-var w = c.width;
-var h = c.height;
 var fontFamily = "Domestic Manners, Arial, helvetica, sans serif";
 var pop = new Audio('pop.ogg');
 var currentObj = null;
@@ -68,9 +71,10 @@ d.onmousewheel = function(mw){
 };
 
 cg.hoverdiv = function(e,divid){
-
-    var left  = e.clientX  + "px";
-    var top  = e.clientY  + "px";
+    var x = e.clientX + 25;
+    var y = e.clientY ;
+    var left  = x + "px";
+    var top  = y  + "px";
 
     
     var div = document.getElementById(divid);
@@ -81,21 +85,23 @@ cg.hoverdiv = function(e,divid){
     return false;
 }
 cg.sourceSwap = function (e) {
-    var img_mini = $(this);
-    var img_id = parseInt(img_mini.data('src-id'));
+    var div_mini = $(this);
+    console.log(div_mini)
+    var img_id = parseInt(div_mini.data('src-id'));
     var img_url = toonUrls[img_id];
-    console.log(img_url)
     $("#bigImg").attr('src','toons/' + img_url);
     cg.hoverdiv(e,"focusImg")
 }
 cg.buildMinis = function(){
 	var buffer = '';
+        var divString = "<div class='himg'  data-src-id='IMG_ID'>";
 	var imgString = "<img src='toons/IMG_URL' data-src-id='IMG_ID' class='rc mini' alt='toons'></img>";
 	var link = "<a href=\"javascript:cg.createImage('toons/IMG_URL')\">";
 
 	for(var i=0; i < miniUrls.length; i++){
+                buffer += divString.replace(/IMG_ID/,i);
 		buffer += link.replace(/IMG_URL/, toonUrls[i]);
-		buffer += imgString.replace(/IMG_URL/, miniUrls[i]).replace(/IMG_ID/, i) + '</a>';
+		buffer += imgString.replace(/IMG_URL/, miniUrls[i]).replace(/IMG_ID/, i) + '</a></div>';
 	}
 
 	lib.append(buffer);
@@ -103,7 +109,7 @@ cg.buildMinis = function(){
 	//lib.append( $('#textTool').clone() );
 	$('#menuContainer').append( $('#instructs').clone() );
         $(function () {
-          $('img.rc').hover(cg.sourceSwap, cg.sourceSwap);
+          $('div.himg').hover(cg.sourceSwap, cg.sourceSwap);
         });
 }
 
@@ -174,6 +180,13 @@ cg.createTextFromInput = function(e){
 
 cg.saveImage = function(){
 	var data = c.toDataURL('png');
+       // $.ajax({
+       //   type: "POST",
+       //   url: 'https://lut.im',
+       //   data: data,
+       //   success: function(d){console.log(d);},
+       //   dataType: 'json'
+       // });
 	var win = window.open();
 	var b = win.document.body;
 	var img = new Image();
