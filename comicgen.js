@@ -87,7 +87,6 @@ cg.hoverdiv = function(e,divid){
 }
 cg.sourceSwap = function (e) {
     var div_mini = $(this);
-    console.log(div_mini)
     var img_id = parseInt(div_mini.data('src-id'));
     var img_url = toonUrls[img_id];
     $("#bigImg").attr('src','toons/' + img_url);
