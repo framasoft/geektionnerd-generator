@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html manifest="comicgen.appcache">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="gege.css"/>
+<script>
+(function() {
+	var webappCache = window.applicationCache;
+	
+	function loaded()
+	{
+		//var h1El = document.querySelector("h1");
+		var connectionStatus = ((navigator.onLine) ? 'online' : 'offline');
+		//h1El.textContent = h1El.textContent + " - currently: " + connectionStatus;
+
+		switch(webappCache.status)
+		{
+			case 0:
+				console.log("Cache status: Uncached");
+				break;
+			case 1:
+				console.log("Cache status: Idle");
+				break;
+			case 2:
+				console.log("Cache status: Checking");
+				break;
+			case 3:
+				console.log("Cache status: Downloading");
+				break;
+			case 4:
+				console.log("Cache status: Updateready");
+				break;
+			case 5:
+				console.log("Cache status: Obsolete");
+				break;
+		}
+
+	}
+
+	function updateCache()
+	{
+		webappCache.swapCache();
+		console.log("Cache has been updated due to a change found in the manifest");
+	}
+
+	function errorCache()
+	{
+		console.log("You're either offline or something has gone horribly wrong.");
+	}
+
+	window.addEventListener("load", loaded, false);
+	webappCache.addEventListener("updateready", updateCache, false);
+	webappCache.addEventListener("error", errorCache, false);
+
+})();
+</script>
+
+<title>GéGé, Geektionnerd Generator</title>
+ </head>
+<body>
+
+<!-- ajout conteneur global -->
+<div id="wrapper">
+  <div id="focusImg" style="display:none;"><img id="bigImg"/></div>
+<!-- tableau de bord -->
+
+	<div id="tableauDeBord">
+ 		<div id="menuContainer">
+	<h1><span class="hidden">GéGé</span><img src="images/banniere_gege.png" width="240" height="74" alt="Banniere du generateur GKND" ></h1>
+	<p class="hidden">Geektionnerd Generator</p>
+			<div id="lib" class="rc">
+			<div><label for="newText"><span class="hidden">Saisissez votre bulle</span></label> <input type="text" id="newText" placeholder="Saisissez votre bulle" onkeypress="cg.createTextFromInput(event)"/></div>
+			<div><label for="newImgUrl"><span class="hidden">Saisissez l'URL de l'image que vous souhaitez importer</span></label> <input type="text" id="newImgUrl" placeholder="Saisissez une URL image" onkeypress="cg.createImageFromInput(event)"/></div>
+			</div>
+	</div>
+	
+<div id="hiddenObjs">
+	<div id="textTool" class="rc mini textTool" title="Ajouter du texte" onclick="cg.createText();">T</div>
+	
+	<div id="instructs" class="rc instructions">
+		<h2>Instructions</h2>
+		<ul>
+			<li><em>Flêche bas</em>: rétrécir</li>
+			<li><em>Flêche haut</em>: agrandir</li>
+			<li><em>Gauche/Droite</em>: retournement horizontal</li>
+			<li><em>Del</em>: effacer l'objet</li>
+		</ul>
+
+	</div></div>
+<div id="toolbar" class="rcBottom">
+	
+	<h2 class="save"><a href="javascript:cg.saveImage();" title="enregistrer l image">Enregistrer votre image</a></h2>
+<h2 class="last">Redimensionner la fenêtre</h2> 
+<br />
+<p> <input type="text" id="newWidth" placeholder="Largeur"/> x <input type="text" id="newHeight" placeholder="Hauteur"/> </p> 
+<br/>
+<h2 class="save"><a href="javascript:cg.setScreen($('#newWidth').val(), $('#newHeight').val())" class="save">Redimensionner</a> </h2>
+</div></div>
+<!-- fin tableau de bord -->
+
+	<div id="cscreen">
+		<canvas class="rc" id="c" width="800" height="600">
+			Le générateur du GKND a besoin d'un navigateur récent et de javascript pour fonctionner.
+		</canvas>
+	</div>
+<footer>
+	<p>Le Geektionnerd et l'intégralité de son contenu (images et textes) sont l'oeuvre de Simon "Gee" Giraudot et diffusés sous licence Creative Commons By-Sa.<br/>
+	Découvrez le Geektionnerd sur <a href="http://geektionnerd.net/" title="Suivez les aventures du GKND sur le site dédié">http://geektionnerd.net/</a> et <a href="http://enventelibre.org/catalog/par-association/framasoft" title="Acheter l'album sur En Vente Libre">en album.</a><br/>
+
+	Gégé est une adaptation de <a href="https://github.com/chambs/comicgen" title="Code source de l'auteur original sur Github">Comic Gen de Chamb</a> réalisée par Cyrille Largillier pour <a href="http://framasoft.org" title="Vous ne connaissez pas encore Framasoft ?">Framasoft</a>.</p>
+</footer>
+<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+<script type="text/javascript" src="ragaboom.min.js"></script>
+<script type="text/javascript" src="comicgen.js"></script>
+
+</div>
+</body>
+</html>
