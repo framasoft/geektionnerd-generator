@@ -177,16 +177,25 @@ cg.createTextFromInput = function(e){
 		pop.play();
 	}
 }
-cg.createImageFromInput= function(e){
+cg.createImageFromInput= function(t){
 
-   var key = e.keyCode || e.which;
-   var imgUrl = $('#newImgUrl').val();
+  var fileList = t.files; /* now you can work with the file list */
+    var imageType = /image.*/;
+    var nBytes = 0;
+  
+    for (var i = 0; i < fileList.length; i++)
+    {
+      
+        var file = fileList[i];
+        nBytes += file.size;
+        if (!file.type.match(imageType))
+        {
+            continue;
+        }
+        imgUrl = window.URL.createObjectURL(file);
+        cg.createImage(imgUrl);
+    }
 
-   if(key == 13){
-   
-     cg.createImage(imgUrl);
-     $('#newImgUrl').val('');
-   }
 }
 cg.saveImage = function(){
 	var data = c.toDataURL('png');

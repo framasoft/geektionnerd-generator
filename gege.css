@@ -248,3 +248,12 @@ text-decoration: underline;
  width: 70px ;
 display : inline;
 }
+.upload{
+  margin-top: 20px;
+  margin-bottom: 20px;
+
+}
+
+input.file {
+  display:none;
+}

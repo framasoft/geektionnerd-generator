@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html manifest="comicgen.appcache">
+<html>
 <head>
 <meta charset="UTF-8">
 <link rel="stylesheet" href="gege.css"/>
@@ -70,13 +70,14 @@
 	<p class="hidden">Geektionnerd Generator</p>
 			<div id="lib" class="rc">
 			<div><label for="newText"><span class="hidden">Saisissez votre bulle</span></label> <input type="text" id="newText" placeholder="Saisissez votre bulle" onkeypress="cg.createTextFromInput(event)"/></div>
-			<div><label for="newImgUrl"><span class="hidden">Saisissez l'URL de l'image que vous souhaitez importer</span></label> <input type="text" id="newImgUrl" placeholder="Saisissez une URL image" onkeypress="cg.createImageFromInput(event)"/></div>
-			</div>
+                        <div class="upload">
+                          <input type="file" accept="image/*" id="imageFileInput" class="file" multiple   onchange='cg.createImageFromInput(this)' />
+                        <h2 class="save"><a href="#" onclick="$('#imageFileInput').click();" title="Télécharger une ou plusieurs images">Télécharger une image</a></h2></div>
+                        </div>
 	</div>
 	
 <div id="hiddenObjs">
 	<div id="textTool" class="rc mini textTool" title="Ajouter du texte" onclick="cg.createText();">T</div>
-	
 	<div id="instructs" class="rc instructions">
 		<h2>Instructions</h2>
 		<ul>
@@ -99,7 +100,7 @@
 <!-- fin tableau de bord -->
 
 	<div id="cscreen">
-		<canvas class="rc" id="c" width="800" height="600">
+		<canvas class="rc" id="c" crossorigin="anonymous" width="800" height="600">
 			Le générateur du GKND a besoin d'un navigateur récent et de javascript pour fonctionner.
 		</canvas>
 	</div>
